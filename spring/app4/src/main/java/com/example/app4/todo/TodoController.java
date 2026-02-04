@@ -44,7 +44,7 @@ public class TodoController {
     }
 
     //delete
-    @DeleteMapping("delete")
+    @DeleteMapping
     public int delete(String no){
         int result = todoService.delete(no);
         return result;
