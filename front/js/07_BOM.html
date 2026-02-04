@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <h1>BOM (Browser Object Model)</h1>
+    
+    <hr>
+    
+    <h2>window 객체</h2>
+    <p>
+        window 객체는 자바스크립트의 최상위 객체이며, 브라우저 내의 모든 요소들과 객체를 포함한다. <br>
+        BOM : location 객체, navigator 객체, history 객체, screen 객체 <br>
+        DOM : document 객체
+    </p>
+    
+    <h3>1) window.open()</h3>
+    <button id="btn01">테스트</button>
+    <h3>2) 타이머 관련 메소드</h3>
+    <p>
+        특정 함수를 일정 시간이 경과된 이후에 호출할 수 있도록 제공되는 함수를 타이머라 한다.
+    </p>
+    
+    <h4>window.setTimeout()</h4>
+    <p>
+        일정 시간이 경과된 이후에 매개값으로 전달된 콜백 함수를 단 한 번만 실행한다.
+    </p>
+    <button onclick="testTimeout()">테스트</button>
+    
+    <h4>window.setInterval()</h4>
+    <p>
+        일정 시간이 경과된 이후에 매개값으로 전달된 콜백 함수를 반복해서 실행한다.
+    </p>
+    <button onclick="testInterver()">테스트</button>
+    <button onclick="testClearInterver()">클리어테스트</button>
+    
+    <h2>BOM(Browser Object Model) 객체</h2>
+    <h3>1) location 객체</h3>
+    <p>
+        브라우저의 주소 표시줄과 관련된 객체이다.
+    </p>
+    <button onclick="testLocation();">로케이션 확인</button>
+    
+    <h4>location.reload()</h4>
+    <p>
+        페이지를 새로 고침하는 메소드
+    </p>
+    
+    <h4>location.href</h4>
+    <p>
+        현재 페이지의 URL 주소를 가지고 있는 속성으로 <br>
+        해당 속성의 값을 변경해서 페이지를 이동할 수 있다.
+    </p>
+    
+    <h4>location.assign(), location.replace()</h4>
+    <p>
+        두 메소드 모두 페이지를 이동시키지만, replace()는 history에 기록되지 않는다.
+    </p>
+    
+    <h3>2) history 객체</h3>
+    <p>
+        브라우저의 방문 기록과 관련된 객체이다.
+    </p>
+    <button onclick="testhistory();">히스토라 확인</button>
+    <h3>3) navigator 객체</h3>
+    <p>
+        웹 페이지를 실행하고 있는 브라우저에 대한 정보를 가지고 있는 객체이다.
+    </p>
+    <button onclick="testNavicator();">네비게이션</button>
+    
+    <h3>4) screen 객체</h3>
+    <p>
+        운영체제의 화면(모니터)의 정보를 가지고 있는 객체이다.
+    </p>
+    <button onclick="testScreen();">스크린</button>
+    
+    <script src="./07_BOM.js"></script>
+</body>
+</html>

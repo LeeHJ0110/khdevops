@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+}
+
+div{
+    box-sizing: border-box;
+}
+
+#wrapper { 
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+}
+
+#wrapper > div {
+    border: 5px solid red;
+}
+
+#header{
+    height: 20%;
+    display: flex;
+}
+
+#header > div{
+    border: 3px solid blue;
+}
+
+#header > div:nth-child(1){
+    width: 35%;
+    height: 100%;
+}
+
+#header > div:nth-child(2){
+    width: 70%;
+    height: 100%;
+}
+
+#main{
+    height: 70%;
+    display: flex;
+}
+
+#main > div{
+    border: 3px solid blue;
+}
+
+#main > div:nth-child(1){
+    width: 20%;
+}
+#main > div:nth-child(2){
+    width: 60%;
+}
+#main > div:nth-child(3){
+    width: 20%;
+}
+
+#footer{
+    height: 10%;
+}

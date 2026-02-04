@@ -1,0 +1,56 @@
+h1{
+    background-color: red;
+}
+div[name = "div01"],
+div[name = "div04"]{
+    color: blue;
+    font-weight: 700;
+}
+
+#test02 > h4{
+    background-color: red;
+}
+
+#test03 ~ h5{
+    background-color: red;
+}
+
+#test04-1:hover{
+    background-color: violet;
+}
+
+#test04-2:active{
+    background-color: black;
+}
+
+#test05-1:checked{
+    width: 50px;
+    height: 50px;
+}
+#test05-2:focus{
+    background-color: gray;
+}
+.test05:enabled{
+    border: 3px solid red;
+}
+
+#test06{
+    border: 5px solid black;
+}
+
+#test06 > p:nth-child(2n){
+    background-color: gray;
+}
+#test07{
+    border: 3px dashed black;
+}
+#test07 > p:last-of-type{
+    background-color: gray;
+}
+#test09 > p::after{
+    content: "222222222222";
+    background-color: orange;
+}
+#test10 > p:not(.kh){
+    background-color: skyblue;
+}

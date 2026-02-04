@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="02_선택자2.css">
+</head>
+<body>
+    <h1>선택자2</h1>
+    <hr>
+
+    <h2>1. 기본 속성 선택자</h2>
+    <pre>
+        선택자[속성명=속성값] { .. }
+    </pre>
+    <br>
+    <div name="div01" class="test">div1</div>
+    <div name="div02" class="test">div2</div>
+    <div name="div03" class="test">div3</div>
+    <div name="div04"class="test123">div4</div>
+    <hr>
+
+    <h2>2. 자식 / 자손 선택지</h2>
+    <pre>
+        [자식]
+        a > b {..}
+
+        [자손]
+        a b {..}
+    </pre>
+    <div id="test02">
+        <h4>에이치포11</h4>
+        <h4>에이치포22</h4>
+        <ul>
+            <li>리스트11</li>
+            <li>리스트22</li>
+            <h4>ul 안에 있는 에이치포</h4>
+        </ul>
+    </div>
+    <hr>
+
+    <h2>3. 동위 선택자</h2>
+    <pre>
+        동위 관계(같은 레벨)에서
+        뒤에 위치한 태그를 선택
+        
+        - a의 바로 뒤 b
+        a+B {..}
+        - a뒤에 있는 모든 b
+        a~b {..}
+    </pre>
+
+    <h5 id="test03">에이치파이브1</h5>
+    <h5>에이치파이브2</h5>
+    <h5>에이치파이브3</h5>
+    <h5>에이치파이브4</h5>
+    <h5>에이치파이브5</h5>
+    <hr>
+
+    <h2>4. 반응 선택자</h2>
+    <pre>
+        hover, active
+    </pre>
+
+    <h3 id="test04-1">에이치쓰리</h3>
+    <h3 id="test04-2">에이치쓰리</h3>
+    <hr>
+
+    <h2>5. 상태 선택자</h2>
+    <pre>
+        체크된 상태
+        초점이 맞춰진 상태
+        사용 가능한
+        사용 불가능한
+    </pre>
+
+    <input id="test05-1" type="checkbox">
+    <br>
+    <input id="test05-2" type="text">
+    <br>
+    <input disabled class="test05" type="text">
+    <br>
+    <input class="test05" type="text">
+    <hr>
+
+    <h2>6. 일반 구조 선택자</h2>
+    <pre>
+        n번째 위치
+    </pre>
+    <div id="test06">
+        <p>피1</p>
+        <p>피2</p>
+        <p>피3</p>
+        <p>피4</p>
+        <p>피5</p>
+        <p>피6</p>
+        <p>피7</p>
+        <p>피8</p>
+        <p>피9</p>
+        <span>스팬1</span>
+    </div>
+    <hr>
+
+    <h2>7. 형태 구조 선택자</h2>
+    <pre>
+        특정 위치의 특정 태그 선택
+    </pre>
+    <div id="test07">
+        <p>피1</p>
+        <p>피2</p>
+        <p>피3</p>
+        <p>피4</p>
+        <p>피5</p>
+        <p>피6</p>
+        <p>피7</p>
+        <p>피8</p>
+        <p>피9</p>
+        <span>스팬1</span>
+    </div>
+    <hr>
+
+    <h2>8.문자 선택자</h2>
+    <pre>
+        특정 조건의 문자를 선택
+    </pre>
+
+    <div id="test09">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolores facilis reiciendis voluptates minus amet quis at iusto nesciunt! Explicabo expedita modi ut dolores repudiandae illum quisquam adipisci nesciunt porro.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, atque, hic tempora repellendus est neque modi aut ducimus incidunt iure molestiae, esse fugit at iste voluptate reprehenderit. Natus, at molestiae.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam ut nesciunt beatae odio natus, iure distinctio optio asperiores architecto doloribus commodi. Corporis explicabo eveniet nam omnis commodi, aliquam possimus dicta!
+        </p>
+    </div>
+    <hr>
+
+    <h2>9. 부정 선택자</h2>
+    <pre>
+        핸재 선택의 반대
+    </pre>
+    <div id="test10">
+        <p class="kh">피1</p>
+        <p class="kh">피2</p>
+        <p>그냥 피</p>
+    </div>
+
+
+</body>
+</html>

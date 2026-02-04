@@ -1,0 +1,126 @@
+#container{
+    margin: 0;
+    padding: 0;
+    width: 100%;    
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 0.5fr 10fr;
+    grid-template-columns: 1fr;
+}
+header{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.5fr 1fr 3fr 8fr 0.5fr 1fr;
+    place-items: center left;
+    margin: 20px;
+}
+button{
+    border: 0;
+    background-color: white;
+}
+button:hover{
+    background-color: lightgray;
+}
+header > div > button{
+    height: 40px;
+    border-radius: 999px;
+}
+
+
+#searchInput > input{
+    width: 30vw;
+    height: 40px;
+    border-radius: 50px 0px 0px 50px;
+}
+#searchInput > button:first-of-type{
+    border-radius: 0px 50px 50px 0px;
+    background-color: rgb(240, 240, 240);
+    padding: 0 15px;
+}
+#searchInput > button:last-of-type{
+    margin-left: 20px;
+    background-color: rgb(240, 240, 240);
+}
+
+main{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 9fr
+}
+
+#menuList{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+#menuList > button{
+    padding: 5px 0;
+    border-radius: 10px;
+    text-align: left;
+}
+.menuIcon{
+    display: inline-block;
+    background-color: aquamarine;
+    width: 20px;
+    height: 20px;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+nav > button{
+    background-color: lightgray;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+#vContent{
+    padding: 10px;
+    border-radius: 10px;
+}
+#vContent:hover{
+    background-color: lightgray;
+}
+#videos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+#videos > div{
+    text-align: left;
+}
+.vImage{
+    display: flex;
+    width: 550px;
+    height: 400px;
+    background-color: lightgoldenrodyellow;
+}
+.vInfo{
+    margin-top: 10px;
+    display: flex;
+}
+.vIcon{
+    border-radius: 99999px;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background-color: darksalmon;
+}
+
+
+#loginBtn{
+    border-radius: 9999px;
+    display: flex;
+    color: rgb(80, 80, 255);
+    font-weight: 700;
+    border: 1px solid lightgray;
+    justify-content: center;
+    align-items: center;
+}
+#loginBtn:hover{
+    background-color: rgb(181, 233, 253);
+    border: 0;
+}

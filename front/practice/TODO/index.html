@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <link rel="stylesheet" href="./index.css">
+    <script defer src="./index.js"></script>
+</head>
+<body>
+    <h1>TODO</h1>
+    <hr>
+    <h2>등록</h2>
+    <input type="text" name="title">
+    <input type="button" value="할일추가" onclick="insertTodo();">
+
+    <hr>
+    <h2>목록</h2>
+    <button onclick="displayVoList()">조회</button>
+    <table id="voListTable">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>할일</th>
+                <!-- <th><button onclick="deleteTodo();">삭제하기</button></th> -->
+                <th><button  onclick="deleteTodo()">삭제</button></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+    </table>
+
+    <hr>
+    <h2>상세조회</h2>
+    <div id="modal" onclick="closeModal()">
+        <div id="todoDetailArea" onclick="f01(event);">
+            <label>번호: </label><span id="todoDetailNo"></span>
+            <br>
+            <label>제목:  </label><span id="todoDetailTitle"></span>
+            <br>
+            <label>완료여부: </label><span id="todoDetailDone"></span>
+            <br>
+            <label>생성일시: </label><span id="todoDetailCreatedAt"></span>
+            <br>
+            <button onclick="saveDone()">저장</button>
+        </div>
+    </div>
+</body>
+</html>

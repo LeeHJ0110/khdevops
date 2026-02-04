@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script defer src="./08_DOM.js"></script>
+</head>
+<body>
+    <h1>DOM</h1>
+    <hr>
+
+    <h2>Node 객체</h2>
+    <h3>텍스트 노드가 있는 요소 노드 생성</h3>
+    <button onclick="createNode01();">안녕 h1 태그 요소 노드</button>
+
+    <div id="result01"></div>
+    
+    <h3>텍스트 노드가 없는 요소 노드 생성</h3>
+    <button onclick="createNode02();">이미지 태그 요소 노드</button>
+    
+    <div id="result02"></div>
+    
+    <hr>
+
+    <h2>Node 객체 삭제</h2>
+    <button onclick="removeNode01();">택스트 삭제</button>
+    <button onclick="removeNode02();">이미지 삭제</button>
+
+</body>
+</html>

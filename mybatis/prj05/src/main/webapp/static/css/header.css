@@ -1,0 +1,38 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header{
+    height: 20vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 6fr 2fr;
+    place-items: center center;
+    border-bottom: 1px solid black;
+}
+
+#loginArea > form{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    
+    & > input[type=submit]{
+        grid-row:span 2;
+    }
+}
+nav{
+    height: 10vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center center;
+    border-bottom: 1px solid black;
+}
+main{
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}

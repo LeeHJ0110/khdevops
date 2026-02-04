@@ -1,0 +1,27 @@
+h1{
+    background-color: green;
+}
+@media(min-width:767px){
+    h1{
+        background-color: red;
+    }
+}
+@media(min-width:1024px){
+    h1{
+        background-color: blue;
+    }
+}
+
+/* h1{
+    background-color: gray;
+}
+@media (max-width:800px){
+    h1{
+        background-color: blue;
+    }
+}
+@media (max-width:500px){
+    h1{
+        background-color: red;
+    }
+} */

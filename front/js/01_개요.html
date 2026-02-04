@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개요</title>
+</head>
+<body>
+    <h1>개요</h1>
+    <!--  웹 브라우저에서 많이 사용되는 인터프리터 방식의 스크립트 언어(함수, 객체지향)
+            - 인터프리터 방식 : 컴파일 과정 없이 실행하면서 코드를 하나씩 읽어내는 방식이다. 
+            (코드에 문법에 오류가 있으면 실행 시점에 알 수 있다.) -->
+    <h3>1. JS 사용법</h3>
+
+    <h4>inline</h4>
+    <button onclick="alert('???');">테스트</button>
+    <h4>internal</h4>
+    <script>
+        // alert("내부 스크립트 동작")
+    </script>
+    <h4>external</h4>
+    <!-- <script src="./01_개요.js"></script> -->
+
+    <hr>
+
+    <h3>2. 데이터 입출력</h3>
+    <pre>
+        window.confirm()
+        window.prompt()
+
+        window.alert()
+        document.write()
+
+    </pre>
+    <script>
+        // result = window.confirm("컨펌");
+        // console.log(result);
+        document.write("write")
+    </script>
+
+    <hr>
+    <h3>3. HTML 요소 접근</h3>
+
+    <div id="target" class="box">div</div>
+    <div></div>
+
+    <script>
+        x = document.querySelectorAll("div");
+        console.log(x);
+        
+    </script>
+
+
+</body>
+</html>

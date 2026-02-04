@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬스토리지</title>
+    <script defer src="./11_로컬스토리지.js"></script>
+</head>
+<body>
+    <h1>로컬스토리지</h1>
+    <hr>
+    <pre>
+        브라우저 종속 데이터베이스
+        (오리진(프로토콜,ip)마다 구분된 공간)
+        
+        창을 닫고 다시 열어도 데이터가 유지
+
+        Key - Value 로 구성되어 있다
+        (Key, Value는 문자열 타입니다)
+
+        Key 중복 불가능
+
+        [사용법]
+        localStorage.setItem(Key, Value);
+        localStorage.getItem(Key);
+    </pre>
+
+    <hr>
+    <h1>JSON</h1>
+    <pre>
+        JSON: Javascript Object Notiation
+
+        자바스크립트의 객체 표현 방식
+        JSON.parse(문자열);     //JSON형식의 문자열을 읽고, JSON 형식에 맞게 객체 생성하여 리턴
+        JSON.stringfy(객체);    //객체를 문자열로 변환 (만들어진 문자열을 JSON형식)
+
+        {"Key" : Value, "Key" : Value}
+
+    </pre>
+
+</body>
+</html>

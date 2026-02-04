@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: 1fr 0.5fr 5.5fr 1fr;
+    grid-template-columns: 1fr;
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 3px solid black;
+}
+
+.menu{
+    background-color: gray;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub{
+    display: none;
+    position: absolute;
+    list-style: none;
+    padding-left: 0; 
+    padding-top: 50px;
+    top: 40px;
+}
+
+.menu:hover > .sub {
+    display: block;
+}

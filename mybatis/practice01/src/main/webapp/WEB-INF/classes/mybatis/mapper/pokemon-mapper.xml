@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PokemonMapper">
+	<insert id="insert">
+		INSERT INTO POKEMON(
+			NAME
+			, TYPE
+			, ABILITY
+			, TRAINER_NO
+		)VALUES(
+			#{name}
+			, #{type}
+			, #{ability}
+			, #{trainerNo}
+		)
+	</insert>
+	
+	<select id="selectList" parameterType="String" resultType="PokemonTrainerVo">
+		SELECT P.NO, NAME, TYPE, ABILITY, NICK AS TRAINER
+		FROM POKEMON P
+		INNER JOIN P_TRAINER T
+		ON P.TRAINER_NO = T.NO
+		<where>
+			NAME LIKE '%${value}%'
+			OR NICK LIKE '%${value}%'
+		</where>
+		ORDER BY NO DESC
+	</select>
+	
+	<select id="detail" parameterType="String" resultType="PokemonTrainerVo">
+		SELECT P.NO, NAME, TYPE, ABILITY, NICK AS TRAINER
+		FROM POKEMON P
+		INNER JOIN P_TRAINER T
+		ON P.TRAINER_NO = T.NO
+		WHERE P.NO = #{value}
+		ORDER BY NO DESC
+	</select>
+	
+	
+</mapper>

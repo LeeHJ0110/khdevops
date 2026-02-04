@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표관련태그</title>
+</head>
+<body>
+    <h1>표관련태그</h1>
+    <hr>
+    <!-- 
+        표(테이블) : 행, 열 2가지로 구성되어있다
+        셀: 행과 열이 만나는 지점
+        
+        [기본구조]
+        table, tr, td, th
+        table : 표를 생성하는 태그
+        tr : 행을 설정하는 태그
+        td : 열을 설정하는 태그
+        th : 열을 설정하는 태그 (가운데 정렬, 글자 굵게)
+
+    -->
+    <table>
+        <tr>
+            <td>ㄱㄴㄷ</td>
+            <th>124</th>
+            <td>ㅁㄴㄹ</td>
+        </tr>
+        <tr>
+            <td>ㅋㅌㅊ</td>
+            <td>ㅁㄴㅇ</td>
+            <td>ㅂㅈㄷ</td>
+        </tr>
+        <tr>
+            <td>ㄱㅂㅂㅈ</td>
+            <td>ㅈㅂㄱ</td>
+            <td>ㅂㅈㅁㄴ</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <table border="1">
+        <tr>
+            <td>1</td>
+            <td rowspan="2">2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td colspan="2">8</td>
+        </tr>
+    </table>
+    <hr>
+
+    <table border="1">
+        <tr>
+            <td colspan="2" rowspan="2">1</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+</body>
+</html>
