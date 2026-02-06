@@ -11,13 +11,13 @@ import java.util.List;
 
 @Controller
 @RequestMapping("pokemon")
+@ResponseBody
 public class PokemonController {
 
     @Autowired
     private PokemonService pokemonService;
 
     @GetMapping("insert")
-    @ResponseBody
     public int insert(PokemonVo vo){
         int result = pokemonService.insert(vo);
         if(result != 1){
@@ -27,7 +27,6 @@ public class PokemonController {
     }
 
     @GetMapping("edit")
-    @ResponseBody
     public int edit(PokemonVo vo){
         int result = pokemonService.edit(vo);
         if(result != 1){
@@ -37,7 +36,6 @@ public class PokemonController {
     }
 
     @GetMapping("delete")
-    @ResponseBody
     public int delete(String no){
         int result = pokemonService.delete(no);
         if(result != 1){
@@ -47,13 +45,11 @@ public class PokemonController {
     }
 
     @GetMapping("list")
-    @ResponseBody
     public List<PokemonVo> selectList(){
         return pokemonService.selectList();
     }
 
     @GetMapping("detail")
-    @ResponseBody
     public PokemonVo detail(String no){
         return pokemonService.detail(no);
     }
