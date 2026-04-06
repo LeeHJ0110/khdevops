@@ -1,0 +1,126 @@
+package com.kh.app.member;
+
+import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+@RestController
+@RequestMapping("member")
+@RequiredArgsConstructor
+@Slf4j
+public class MemberRestController {
+
+    private final MemberService memberService;
+
+    @PostMapping("join")
+    public ResponseEntity<HashMap<String, String>> join(
+            MemberVo vo
+            , @RequestParam(required = false) String[] hobbys
+            , @RequestParam(required = false) MultipartFile profile
+    ) throws IOException {
+        // 취미는 여러개가 한번에 들어오니 후처리용으로 분리
+        System.out.println("vo = " + vo);
+        System.out.println(profile);
+
+        //취미 배열 -> 취미 문자열
+        String str = String.join(",", hobbys);
+        vo.setHobby(str);
+
+        int result = memberService.join(vo, profile);
+
+        HashMap<String, String> map = new HashMap<>();
+        map.put("x" , String.valueOf(result));
+        // 페킷형태로 만들어 응답코드, header, body를 합쳐 반환
+        return ResponseEntity.ok(map);
+    }//method
+
+    @GetMapping("hobby")
+    public ResponseEntity<List<HobbyVo>> selectHobbyList(){
+        List<HobbyVo> voList = memberService.selectHobbyList();
+        return ResponseEntity.ok(voList);
+    }
+
+    @GetMapping("hobby/user")
+    public ResponseEntity<HashMap<String, String>> selectUserHobbyList(HttpSession session){
+        MemberVo loginMemberVo = (MemberVo) session.getAttribute("loginMemberVo");
+
+        HashMap<String, String> map = new HashMap<>();
+        map.put("hobby" , loginMemberVo.getHobby());
+
+        return ResponseEntity
+                .ok()
+                .body(map);
+    }
+
+    @PostMapping("login")
+    public ResponseEntity.BodyBuilder login(@RequestBody MemberVo vo , HttpSession session){
+        MemberVo loginMemberVo = memberService.login(vo);
+        if(loginMemberVo == null){
+            throw new IllegalArgumentException("[M-200] login err ...");
+        }
+        session.setAttribute("loginMemberVo" , loginMemberVo);
+        return ResponseEntity.ok();
+    }
+
+    @GetMapping("/logout")
+    public ResponseEntity<Object> logout(HttpSession session){
+        session.invalidate();
+        return ResponseEntity
+                .status(HttpStatus.FOUND)
+                .header(HttpHeaders.LOCATION, "/home")
+                .build();
+    }
+
+    @DeleteMapping("/quit")
+    public ResponseEntity.BodyBuilder quit(HttpSession session){
+        MemberVo loginMemberVo = (MemberVo) session.getAttribute("loginMemberVo");
+        session.invalidate();
+        String no = loginMemberVo.getNo();
+        int result = memberService.quit(no);
+        if(result != 1){
+            throw new IllegalStateException("[M-500]");
+        }
+        return ResponseEntity.ok();
+    }
+
+    @PutMapping("/edit")
+    public ResponseEntity<HashMap<String, String>> edit(
+            MemberVo vo,
+            @RequestParam(required = false) MultipartFile profile,
+            HttpSession session
+    ) throws IOException {
+        MemberVo loginMemberVo = (MemberVo) session.getAttribute("loginMemberVo");
+        if(loginMemberVo == null){
+            throw new IllegalStateException("[M401] need to login");
+        }
+        String no = loginMemberVo.getNo();
+        vo.setNo(no);
+        MemberVo updatedMemberVo = memberService.edit(vo , profile , loginMemberVo.getProfileChangeName());
+
+        HashMap<String, String> map = new HashMap<>();
+
+        if(updatedMemberVo == null){
+            String errMsg = "[M-411] updated fail";
+            log.error(errMsg);
+            throw new IllegalStateException(errMsg);
+        }
+        map.put("msg" , "회원 정보 수정 잘 됨 ~~~");
+
+        session.setAttribute("loginMemberVo" , updatedMemberVo);
+        return ResponseEntity
+                .ok()
+                .body(map);
+    }
+
+
+
+}//class
