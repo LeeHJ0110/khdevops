@@ -10,7 +10,7 @@ import java.util.List;
 public interface BookMapper {
 
     @Insert("""
-            INSERT INTO BOOK(
+            INSERT INTO BOOKS(
                 TITLE
                 ,PRICE
             )VALUES(
@@ -22,7 +22,7 @@ public interface BookMapper {
 
     @Select("""
             SELECT *
-            FROM BOOK
+            FROM BOOKS
             ORDER BY NO DESC
             """)
     List<BookVo> getBookList();

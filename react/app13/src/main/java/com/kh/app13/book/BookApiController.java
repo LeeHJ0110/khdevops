@@ -27,6 +27,7 @@ public class BookApiController {
     public BookInsertRespVo insertBook(@RequestBody BookVo bookVo){
         int result = bookService.insertBook(bookVo);
         BookInsertRespVo respVo = new BookInsertRespVo();
+        System.out.println(respVo);
         respVo.setResult(result + "");
         return respVo;
     }

@@ -19,6 +19,60 @@ const Divider = styled.hr`
   border-top: 2px solid #ddd;
 `;
 
+const Form = styled.form`
+  background: white;
+  padding: 30px;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+`;
+
+const Label = styled.p`
+  margin: 15px 0 5px;
+  font-weight: 600;
+  font-size: 14px;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+
+  &:focus {
+    border-color: #2c3e50;
+  }
+`;
+
+const PriceWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+const Unit = styled.span`
+  font-size: 14px;
+`;
+
+const Button = styled.button`
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #1a252f;
+  }
+`;
+
 function BookInsertPage() {
   const [inputTitle, setInputTitle] = useState('');
   const [inputPrice, setInputPrice] = useState(0);
@@ -46,9 +100,9 @@ function BookInsertPage() {
     <PageWrapper>
       <Title>BookInsertPage</Title>
       <Divider />
-      <form onSubmit={handleSubmit}>
-        <p>책 이름</p>
-        <input
+      <Form onSubmit={handleSubmit}>
+        <Label>책 이름</Label>
+        <Input
           type="text"
           name="title"
           placeholder="홍길동전"
@@ -57,8 +111,8 @@ function BookInsertPage() {
             setInputTitle(evt.target.value);
           }}
         />
-        <p>가격</p>
-        <input
+        <Label>가격</Label>
+        <Input
           type="number"
           name="title"
           placeholder="1000"
@@ -67,10 +121,9 @@ function BookInsertPage() {
             setInputPrice(evt.target.value);
           }}
         />
-        <label>원</label>
         <br />
         <button>등록</button>
-      </form>
+      </Form>
     </PageWrapper>
   );
 }
